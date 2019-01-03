@@ -13,3 +13,15 @@ for score in individualScores {
 }
 
 print(teamScore)
+
+// while loop
+
+var counter = 0
+let scoresCount = individualScores.count
+
+while counter <  scoresCount {
+  teamScore += individualScores[counter]
+  counter += 1
+}
+
+print(teamScore)
