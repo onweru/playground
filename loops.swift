@@ -1,22 +1,23 @@
 let individualScores = [75, 43, 103, 87, 12]
 
-var teamScore = 0
+var weighedScore = 0
 
 //  for in loop
 
 for score in individualScores {
   if score > 50 {
-    teamScore += 3
+    weighedScore += 3
   } else {
-    teamScore += 1
+    weighedScore += 1
   }
 }
 
-print(teamScore)
+print(weighedScore)
 
 // while loop
 
 var counter = 0
+var teamScore = 0
 let scoresCount = individualScores.count
 
 while counter <  scoresCount {
