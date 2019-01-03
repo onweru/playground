@@ -25,3 +25,15 @@ while counter <  scoresCount {
 }
 
 print(teamScore)
+
+// repeat while loop
+
+var anotherCounter = 0
+var teamScores = 0
+
+repeat {
+  teamScores += individualScores[anotherCounter]
+  anotherCounter += 1
+} while anotherCounter <  scoresCount
+
+print(teamScores)
