@@ -54,3 +54,15 @@ print("Hearts Description is \(heartsDescription), and their corresponding color
 
 // enum modelling a server response
 
+enum ServerResponse {
+  case result(String, String)
+  case failure(string)
+}
+
+let success = ServerResponse.result("6:30 am", "6:30 pm")
+let failure = ServerResponse.failure("Out of kebabs")
+
+switch success {
+  case let .result(sunrise, sunset): print("sunrise is at \(sunrise) and sunset is at \(sunset).")
+  case let .failure(message): print("Failure ... \(message)")
+}
