@@ -2,15 +2,15 @@
 
 enum Rank: Int {
   case ace = 1
-  case one, two, three, four, five
-  case king, queen, bishop
+  case two, three, four, five, six, seven, eight, nine, ten
+  case jack, queen, king
 
   func simpleDescription() -> String {
     switch self {
       case .ace: return "Ace"
-      case .king: return "King"
+      case .jack: return "Jack"
       case .queen: return "Queen"
-      case .bishop: return "Bishop"
+      case .king: return "King"
       default: return String(self.rawValue)
     }
   }
@@ -52,3 +52,4 @@ let threeOfSpades = Card(rank: .three, suit: .spades)
 let threeOfSpadesDescription = threeOfSpades.simpleDescription();
 
 print(threeOfSpadesDescription)
+
