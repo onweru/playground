@@ -16,8 +16,9 @@ enum Rank: Int {
   }
 }
 
-enum Suit {
-  case spades, hearts, diamonds, clubs
+enum Suit: Int {
+  case spades = 1
+  case hearts, diamonds, clubs
   
   func simpleDescription() -> String {
     switch self {
