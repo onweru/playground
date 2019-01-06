@@ -37,8 +37,17 @@ enum Suit {
       case .clubs: return "clubs"
     }
   } 
+
+  func color() -> String {
+    switch self {
+      case .spades, .clubs: return "black"
+      case .hearts, .diamonds: return "red"
+    }
+  }
 }
 
 let hearts = Suit.hearts
 let heartsDescription = hearts.simpleDescription()
-print("Hearts Description is \(heartsDescription)")
+let heartsColor = hearts.color()
+print("Hearts Description is \(heartsDescription), and their corresponding color is \(heartsColor)")
+
