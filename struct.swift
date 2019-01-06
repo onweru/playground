@@ -54,3 +54,22 @@ let threeOfSpadesDescription = threeOfSpades.simpleDescription();
 
 print(threeOfSpadesDescription)
 
+
+func deckOfCards() {
+  var deck = [String]()
+  var n = 1
+
+  while let rank = Rank(rawValue: n) {
+    var m = 1 
+    while let suit = Suit(rawValue: m) {
+      let newCard = Card(rank: rank, suit: suit)
+      let newCardName = newCard.simpleDescription()
+      deck.append(newCardName)
+      m += 1
+    }
+    n += 1
+  }
+  print(deck)
+}
+
+deckOfCards()
