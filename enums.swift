@@ -51,3 +51,6 @@ let heartsDescription = hearts.simpleDescription()
 let heartsColor = hearts.color()
 print("Hearts Description is \(heartsDescription), and their corresponding color is \(heartsColor)")
 
+
+// enum modelling a server response
+
