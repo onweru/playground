@@ -21,3 +21,18 @@ let aDescription = a.simpleDescription
 print(aDescription)
 a.adjust()
 
+
+struct SimpleStructure: MyProtocol {
+  var simpleDescription: String = "This is a very simple structure"
+
+  mutating func adjust() {
+    simpleDescription += " that's now adjusted ;)"
+    print(simpleDescription)
+  }
+}
+
+var b = SimpleStructure();
+let bDescription = b.simpleDescription
+
+print(bDescription)
+b.adjust()
