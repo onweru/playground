@@ -26,3 +26,6 @@ func anyCommonElements<T: Sequence, U: Sequence>(_ lhs: T, _ rhs: U) -> Bool whe
 
 let example = anyCommonElements([1, 2, 3], [3])
 print(example)
+
+// challenge 
+// modify the above function such that it returns an array of the elements present in both sequences
