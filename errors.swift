@@ -49,3 +49,21 @@ let printerFailure = try? send(job: 1885, toPrinter: "Never Has Toner")
 
 print("Success \(printerSuccess)")
 print("Failed \(printerFailure)")
+
+// defer
+
+var fridgeIsOpen = false
+let fridgeContent = ["milk", "eggs", "leftovers"]
+
+func fridgeContains(_ food: String) -> Bool {
+  fridgeIsOpen = true
+  defer {
+    fridgeIsOpen = false
+  }
+
+  let result = fridgeContent.contains(food)
+  return result
+}
+
+let hasBananas = fridgeContains("banana")
+print(hasBananas)
