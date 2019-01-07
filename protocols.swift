@@ -36,3 +36,22 @@ let bDescription = b.simpleDescription
 
 print(bDescription)
 b.adjust()
+
+// extensions
+
+extension Int: MyProtocol {
+  var simpleDescription: String {
+    return "The number \(self)"
+  }
+
+  mutating func adjust() {
+    self += 42
+    print(self)
+  }
+}
+
+var c = 7
+let cDescription = c.simpleDescription
+
+print(cDescription)
+c.adjust()
