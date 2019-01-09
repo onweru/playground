@@ -14,3 +14,12 @@ let alternativeGreeting = "Bonjour \(nickName ?? optionalName)"
 print("G\n \(greeting)")
 
 print("GA\n \(alternativeGreeting)")
+
+// optional binding
+let possibleNumber = "3"
+
+if let actualNumber = Int(possibleNumber) {
+  print("The string \"\(possibleNumber)\" has an integer value of \(actualNumber)")
+} else {
+  print("The string \"\(possibleNumber)\" could not be converted to an integer")
+}
