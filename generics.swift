@@ -40,3 +40,14 @@ func duplicate<T>(_ item: T, _ numberOfTimes: Int) -> [T] {
 
 // let ones = duplicate(1, 7)
 // print(ones)
+
+// teamtreehouse challenge generics challenge 1.2
+
+func map<T, U>(array: [T], transformation: (T) -> U) -> [U] {
+ var newArray = [U]()
+  for item in array {
+    var newItem = transformation(item)
+    newArray.append(newItem)
+  }
+  return newArray
+}
