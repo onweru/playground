@@ -38,10 +38,10 @@ func duplicate<T>(_ item: T, _ numberOfTimes: Int) -> [T] {
   return tValues
 }
 
-// let ones = duplicate(1, 7)
-// print(ones)
+let ones = duplicate(1, 7)
+print(ones)
 
-// teamtreehouse challenge generics challenge 1.2
+teamtreehouse challenge generics challenge 1.2
 
 func map<T, U>(array: [T], transformation: (T) -> U) -> [U] {
  var newArray = [U]()
@@ -51,3 +51,10 @@ func map<T, U>(array: [T], transformation: (T) -> U) -> [U] {
   }
   return newArray
 }
+
+func getSquare(number: Int) -> Int {
+    return number * number
+}
+
+let squareNumbers = map(array: [4, 7, 9], transformation: getSquare )
+print(squareNumbers)
