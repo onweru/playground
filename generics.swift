@@ -41,7 +41,7 @@ func duplicate<T>(_ item: T, _ numberOfTimes: Int) -> [T] {
 let ones = duplicate(1, 7)
 print(ones)
 
-teamtreehouse challenge generics challenge 1.2
+// teamtreehouse challenge generics challenge 1.2
 
 func map<T, U>(array: [T], transformation: (T) -> U) -> [U] {
  var newArray = [U]()
@@ -58,3 +58,13 @@ func getSquare(number: Int) -> Int {
 
 let squareNumbers = map(array: [4, 7, 9], transformation: getSquare )
 print(squareNumbers)
+
+// teamtreehouse challenge generics challenge 1.3
+
+
+func largest<T: Comparable>(in array: [T]) -> T? {
+  guard let largestValue = array.max() else {
+    return nil
+  }
+  return largestValue
+}
