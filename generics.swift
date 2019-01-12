@@ -29,3 +29,14 @@ print(example)
 
 // challenge 
 // modify the above function such that it returns an array of the elements present in both sequences
+
+
+// teamtreehouse challenge generics challenge 1
+
+func duplicate<T>(_ item: T, _ numberOfTimes: Int) -> [T] {
+  let tValues = Array(repeating: item, count: numberOfTimes)
+  return tValues
+}
+
+// let ones = duplicate(1, 7)
+// print(ones)
