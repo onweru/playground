@@ -73,3 +73,27 @@ func deckOfCards() {
 }
 
 deckOfCards()
+
+struct Queue<Element> {
+  var array: [Element] = []
+
+  var isEmpty: Bool {
+    return array.isEmpty
+  }
+
+  var count: Int {
+    return array.count
+  }
+
+  mutating func enqueue(_ element: Element) {
+    array.append(element)
+  }
+
+  mutating func dequeue() -> Element? {
+    if array.isEmpty == true {
+      return nil
+    }
+    return array.remove(at: 0)
+  }
+}
+
