@@ -16,3 +16,19 @@ for (student, score) in studentScores {
     default: print("\(student) performed really well")
   }
 }
+
+// solve teamtreehouse closures challenge 1.1 and 1.2
+
+func removeVowels(from oldString: String) -> String {
+  var newString: String = ""
+  for letter  in oldString.characters {
+    switch letter {
+      case "a", "e", "i", "o", "u", "A", "E", "I", "O", "U": break
+      default: newString.append(letter)
+    }
+  }
+  return newString
+}
+
+let sinVowels  = removeVowels(from: "Jambo Kenya")
+print(sinVowels)
