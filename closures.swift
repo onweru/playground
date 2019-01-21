@@ -47,3 +47,11 @@ print(arrangedLanguages)
 
 var reversedLanguages = languages.sorted(by: > )
 print(reversedLanguages)
+
+// example 8 ~ trailing closure 
+
+let states = ["Montana", "Utah", "Washington", "Texas", "Nevada", "Wyoming"]
+
+var arrangedStates = states.sorted { $0 < $1 }
+
+print(arrangedStates)
