@@ -21,3 +21,10 @@ let locations = ["Nairobi", "Arusha", "Tunis", "Moscow", "Tel Aviv"]
  
 var arrangedLocations = locations.sorted(by: {(locale1, locale2) -> Bool in return locale1 < locale2})
 print(arrangedLocations)
+
+
+// example 4 ~ closure with inferred types
+
+var reversedLocations = locations.sorted(by: { locale1, locale2 in return locale1 > locale2 })
+
+print(reversedLocations)
