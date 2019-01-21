@@ -39,7 +39,7 @@ print(reversedLocations)
 
 let languages = ["Javascript", "Swift", "Golang", "CSS", "C#"]
 
-var arrangedLanguages = languages.sort(by: { $0 < $1 })
+var arrangedLanguages = languages.sorted(by: { $0 < $1 })
 
 print(arrangedLanguages)
 
