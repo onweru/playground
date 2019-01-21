@@ -28,3 +28,11 @@ print(arrangedLocations)
 var reversedLocations = locations.sorted(by: { locale1, locale2 in return locale1 > locale2 })
 
 print(reversedLocations)
+
+// example 5 ~ closure with an implicit return
+
+reversedLocations = locations.sorted(by: { locale1, locale2 in locale1 > locale2 })
+
+print(reversedLocations)
+
+
