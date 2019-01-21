@@ -42,3 +42,8 @@ let languages = ["Javascript", "Swift", "Golang", "CSS", "C#"]
 var arrangedLanguages = languages.sort(by: { $0 < $1 })
 
 print(arrangedLanguages)
+
+// example 7 ~ closure using operator
+
+var reversedLanguages = languages.sorted(by: > )
+print(reversedLanguages)
