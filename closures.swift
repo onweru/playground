@@ -35,4 +35,10 @@ reversedLocations = locations.sorted(by: { locale1, locale2 in locale1 > locale2
 
 print(reversedLocations)
 
+// example 6 ~ closure using a shorthand
 
+let languages = ["Javascript", "Swift", "Golang", "CSS", "C#"]
+
+var arrangedLanguages = languages.sort(by: { $0 < $1 })
+
+print(arrangedLanguages)
