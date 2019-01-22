@@ -112,7 +112,7 @@ for i in 1...5 {
 }
 
 // auto closures
-
+// auto closure example 1
 var customersInLine = ["Natasha", "Rogers", "Klein", "Brenda", "Milfred", "Anna"]
 
 print(customersInLine.count)
@@ -125,6 +125,8 @@ print("Now serving \(customerProvider())!")
 
 print(customersInLine.count)
 
+// auto closure example 2
+
 func serve(customer customerProvider: () -> String) {
   print("Now Serving \(customerProvider())!")
 }
@@ -132,3 +134,4 @@ func serve(customer customerProvider: () -> String) {
 serve(customer: {customersInLine.remove(at: 0)})
 
 print(customersInLine.count)
+
