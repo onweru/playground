@@ -110,3 +110,17 @@ for i in 1...5 {
   print("\(message) \(incrementByTen())")
   print("\(message) \(incrementByHundred())")
 }
+
+// auto closures
+
+var customersInLine = ["Natasha", "Rogers", "Klein", "Brenda", "Milfred", "Anna"]
+
+print(customersInLine.count)
+
+let customerProvider = { customersInLine.remove(at: 0) }
+
+print(customersInLine.count)
+
+print("Now serving \(customerProvider())!")
+
+print(customersInLine.count)
