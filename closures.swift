@@ -144,3 +144,24 @@ func serve(customer customerProvider: @autoclosure () -> String) {
 serve(customer: customersInLine.remove(at: 0))
 
 print(customersInLine.count)
+
+
+// An escaping autoclosure
+
+var customerProviders: [() -> String] = []
+
+func collectCustomerProviders(_ customerProvider: @autoclosure @escaping () -> String) {
+  customerProviders.append(customerProvider)
+}
+
+collectCustomerProviders(customersInLine.remove(at: 0))
+
+collectCustomerProviders(customersInLine.remove(at: 0))
+
+print("Collected \(customerProviders.count) closures")
+
+for customerProvider in customerProviders {
+  print("Now serving \(customerProvider())!")
+}
+
+print(customersInLine.count)
