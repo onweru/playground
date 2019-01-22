@@ -135,3 +135,12 @@ serve(customer: {customersInLine.remove(at: 0)})
 
 print(customersInLine.count)
 
+// auto closure example 3
+
+func serve(customer customerProvider: @autoclosure () -> String) {
+  print("Now serving \(customerProvider())!")
+}
+
+serve(customer: customersInLine.remove(at: 0))
+
+print(customersInLine.count)
