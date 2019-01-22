@@ -85,3 +85,28 @@ let strings = numbers.map { (number) ->
 }
 
 print(strings)
+
+
+
+// closure that captures values
+
+func makeIncrementer(forIncrement amount: Int) -> () -> Int {
+  var runningTotal = 0
+
+  func incrementer() -> Int {
+    runningTotal += amount
+    return runningTotal
+  }
+
+  return incrementer
+}
+
+let incrementByTen = makeIncrementer(forIncrement: 10)
+let incrementByHundred = makeIncrementer(forIncrement: 100)
+
+let message = "The running total is"
+
+for i in 1...5 {
+  print("\(message) \(incrementByTen())")
+  print("\(message) \(incrementByHundred())")
+}
