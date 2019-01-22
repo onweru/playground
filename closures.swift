@@ -124,3 +124,11 @@ print(customersInLine.count)
 print("Now serving \(customerProvider())!")
 
 print(customersInLine.count)
+
+func serve(customer customerProvider: () -> String) {
+  print("Now Serving \(customerProvider())!")
+}
+
+serve(customer: {customersInLine.remove(at: 0)})
+
+print(customersInLine.count)
