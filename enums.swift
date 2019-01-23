@@ -159,6 +159,17 @@ enum Country: Int {
 let europeRebel = Country.britain.rawValue
 print(europeRebel)
 
+let poorCountry = 40
+
+if let someCountry = Country(rawValue: poorCountry) {
+  switch someCountry {
+    case .usa: print("The current super power")
+    default: print("Another rich country")
+  }
+} else {
+  print("The country at number \(poorCountry) is not rich")
+}
+
 enum ChessPiece: String {
   case king, queen, castle, knight, pon, bishop
 }
