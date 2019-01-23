@@ -101,3 +101,13 @@ switch somePlanet {
   case .earth: print("Home for homo sapiens")
   default: print("Far in the skies")
 }
+
+// iterable enum
+
+enum Drink: CaseIterable {
+  case coffee, tea, juice, whisky, water, soda
+}
+
+let numberOfChoices = Drink.allCases.count
+
+print("\(numberOfChoices) drinks available")
