@@ -115,3 +115,22 @@ print("\(numberOfChoices) drinks available")
 for drink in Drink.allCases {
   print(drink)
 }
+
+// enum with associated values
+
+enum BarCode {
+  case upc(Int, Int, Int, Int)
+  case qrCode(String)
+}
+
+var productBarcode = BarCode.upc(8, 85909, 51226, 3)
+print(productBarcode)
+
+productBarcode = .qrCode("ABCDEFGXBNSGHETGS")
+
+print(productBarcode)
+
+switch productBarcode {
+  case .upc(let numberSystem, let manufacturer, let product, let check): print("UPC: \(numberSystem), \(manufacturer), \(product), \(check)")
+  case .qrCode(let productCode): print("QR code: \(productCode)")
+}
