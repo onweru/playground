@@ -66,3 +66,38 @@ switch success {
   case let .result(sunrise, sunset): print("sunrise is at \(sunrise) and sunset is at \(sunset).")
   case let .failure(message): print("Failure ... \(message)")
 }
+
+// directions
+
+enum CompassPoint {
+  case north
+  case east
+  case south
+  case west
+}
+
+var directionToHead = CompassPoint.west
+print(directionToHead)
+
+switch directionToHead {
+  case .north: print("Lots of planets have a north")
+  case .east: print("Where the sun rises")
+  case .south: print("Watch out for penguins")
+  case .west: print("Where the skies are blue")
+}
+
+directionToHead = .east
+
+print(directionToHead)
+
+// planets
+
+enum Planet {
+  case mercury, venus, earth, mars, jupiter, saturn, uranus, neptune
+}
+
+let somePlanet = Planet.earth
+switch somePlanet {
+  case .earth: print("Home for homo sapiens")
+  default: print("Far in the skies")
+}
