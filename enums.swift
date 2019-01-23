@@ -111,3 +111,7 @@ enum Drink: CaseIterable {
 let numberOfChoices = Drink.allCases.count
 
 print("\(numberOfChoices) drinks available")
+
+for drink in Drink.allCases {
+  print(drink)
+}
