@@ -151,3 +151,17 @@ enum ASCIIControlCharacter: Character {
 }
 
 // implicit raw values
+
+enum Country: Int {
+  case usa = 1, china, germany, britain, india, brazil, russia
+}
+
+let europeRebel = Country.britain.rawValue
+print(europeRebel)
+
+enum ChessPiece: String {
+  case king, queen, castle, knight, pon, bishop
+}
+
+let headPiece = ChessPiece.king.rawValue
+print(headPiece)
