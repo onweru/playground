@@ -176,3 +176,19 @@ enum ChessPiece: String {
 
 let headPiece = ChessPiece.king.rawValue
 print(headPiece)
+
+// recursive enums
+
+enum ArithmeticExpression {
+  case number(Int) 
+  indirect case addition(ArithmeticExpression, ArithmeticExpression)
+  indirect case multiplication(ArithmeticExpression, ArithmeticExpression)
+}
+
+// enable indirection in all enums with associated values
+
+indirect enum ArithmeticExpression {
+  case number(Int) 
+  case addition(ArithmeticExpression, ArithmeticExpression)
+  case multiplication(ArithmeticExpression, ArithmeticExpression)
+}
