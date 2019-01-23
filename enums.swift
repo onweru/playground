@@ -141,3 +141,13 @@ switch productBarcode {
   case let .upc(numberSystem, manufacturer, product, check): print("UPC: \(numberSystem), \(manufacturer), \(product), \(check)")
   case let .qrCode(productCode): print("QR code: \(productCode)")
 }
+
+// raw values
+
+enum ASCIIControlCharacter: Character {
+  case tab = "\t"
+  case lineFeed = "\n"
+  case carriageReturn = "\r"
+}
+
+// implicit raw values
