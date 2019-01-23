@@ -134,3 +134,10 @@ switch productBarcode {
   case .upc(let numberSystem, let manufacturer, let product, let check): print("UPC: \(numberSystem), \(manufacturer), \(product), \(check)")
   case .qrCode(let productCode): print("QR code: \(productCode)")
 }
+
+productBarcode = BarCode.upc(3, 69304, 71326, 8)
+
+switch productBarcode {
+  case let .upc(numberSystem, manufacturer, product, check): print("UPC: \(numberSystem), \(manufacturer), \(product), \(check)")
+  case let .qrCode(productCode): print("QR code: \(productCode)")
+}
