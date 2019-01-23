@@ -192,3 +192,14 @@ indirect enum ArithmeticExpression {
   case addition(ArithmeticExpression, ArithmeticExpression)
   case multiplication(ArithmeticExpression, ArithmeticExpression)
 }
+
+
+let six = ArithmeticExpression.number(6)
+let three = ArithmeticExpression.number(3)
+
+let sum = ArithmeticExpression.addition(six, three)
+
+let product = ArithmeticExpression.multiplication(sum, ArithmeticExpression.number(2))
+
+print(sum)
+print(product)
