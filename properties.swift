@@ -25,6 +25,13 @@ struct Rect {
       origin.y = newCenter.y - (size.height / 2)
     }
   }
+
+  var area: Double {
+    get {
+      let area = size.width * size.height;
+      return area
+    }
+  }
 }
 
 
@@ -34,3 +41,6 @@ print("The initial square center is now at (\(square.center.x), \(square.center.
 let initialSquareCenter = square.center
 square.center = Point(x: 15.0, y: 15.0)
 print("The square origin is now at (\(square.origin.x), \(square.origin.y))")
+
+let newArea = square.area
+print("New Area is \(newArea)") 
