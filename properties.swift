@@ -71,3 +71,16 @@ print("The initial rectangle center is now at (\(rectangle.center.x), \(rectangl
 let initialRectangleCenter = rectangle.center
 rectangle.center = Point(x: 15.0, y: 25.0)
 print("The rectangle origin is now at (\(rectangle.origin.x), \(rectangle.origin.y))")
+
+
+// read only computed property without the get keyword
+
+struct Cuboid {
+  var width = 0.0, height = 0.0, depth = 0.0
+  var volume: Double {
+    return width * height * depth
+  }
+}
+
+let fourByFiveByTwo = Cuboid(width: 4.0, height: 5.0, depth: 2.0)
+print("The volume of this box is \(fourByFiveByTwo.volume)")
