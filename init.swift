@@ -47,3 +47,19 @@ let unknownUnit = TemperatureUnit(symbol: "X")
 if unknownUnit == nil {
   print("This is not a defined temperature unit, so initialization failed.")
 }
+
+// failable initializers for enums with Raw Values
+
+enum TemperatureValue: Character {
+  case kelvin = "K", celcius = "C", fahrenheit = "F"
+}
+
+let fahrenheitValue = TemperatureValue(rawValue: "F")
+if fahrenheitValue != nil {
+  print("This is a defined temperature value so initialization succeeded.")
+}
+
+let unknownValue = TemperatureValue(rawValue: "X")
+if unknownValue == nil {
+  print("This is not a defined temperature value, so initialization failed")
+}
