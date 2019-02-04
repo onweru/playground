@@ -12,3 +12,9 @@ let someCreature = Animal(species: "Giraffe")
 if let giraffe = someCreature {
   print("An animal was initialized with a species of \(giraffe.species)")
 }
+
+let anonymouseCreature = Animal(species: "")
+
+if anonymouseCreature == nil {
+  print("The anonymouse creature could not be found")
+}
