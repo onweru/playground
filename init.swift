@@ -123,3 +123,22 @@ class AutomaticallyNamedDocument: Document {
     }
   }
 }
+
+class UntitledDocument: Document {
+  override init() {
+    super.init(name: "[Untitled]")!
+  }
+}
+
+// Required initializers
+class SomeClass {
+  required init() {
+    // initializer implementation goes here
+  }
+}
+
+class SomeSubclass: SomeClass {
+  required init() {
+    // subclass implementation of the required initialize goes here
+  }
+}
