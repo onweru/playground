@@ -18,3 +18,32 @@ let anonymouseCreature = Animal(species: "")
 if anonymouseCreature == nil {
   print("The anonymouse creature could not be found")
 }
+
+// enum
+
+enum TemperatureUnit {
+  case kelvin, celsius, fahrenheit
+  init?(symbol: Character) {
+    switch symbol {
+      case "K":
+        self = .kelvin
+      case "C": 
+        self = .celsius
+      case "F": 
+        self = .fahrenheit
+      default: 
+        return nil
+    }
+  }
+}
+
+let fahrenheit = TemperatureUnit(symbol: "F")
+
+if fahrenheit != nil {
+  print("This is a defined temperature unit, so initialization succeeded.")
+}
+
+let unknownUnit = TemperatureUnit(symbol: "X")
+if unknownUnit == nil {
+  print("This is not a defined temperature unit, so initialization failed.")
+}
