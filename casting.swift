@@ -40,5 +40,52 @@ for item in library {
   }
 }
 
-print("Media library contains \(movieCount) movies and \(songCount) songs")
+      print("Media library contains \(movieCount) movies and \(songCount) songs")
+
+for item in library {
+  if let movie = item as? Movie {
+      print("Movie: \(movie.name), dir. \(movie.director)")
+  } else if let song = item as? Song {
+      print("Song: \(song.name), by \(song.artist)")
+  }
+}
+
+// type any Any casting
+
+var things = [Any]()
+
+things.append(0)
+things.append(0.0)
+things.append(42)
+things.append(3.14159)
+things.append("hello")
+things.append((3.0, 5.0))
+things.append(Movie(name: "Ghost Busters", director: "Ivan Reitman"))
+things.append({(name: String) -> String in "Hello, \(name)"})
+
+
+for thing in things {
+  switch thing {
+    case 0 as Int:
+      print("Zero as an Int")
+    case 0 as Double:
+      print("Zero as a Double")
+    case let someInt as Int: 
+      print("an integer value of \(someInt)")
+    case let someDouble as Double where someDouble > 0: 
+      print("a positive double of \(someDouble)")
+    case is Double: 
+      print("some other double that I don't want to print")
+    case let someString as String: 
+      print("a string value of \"\(someString)\"")
+    case let (x, y) as (Double, Double): 
+      print("an (x, y) point at \(x), \(y)")
+    case let movie as Movie: 
+      print("a movie called \(movie.name), dir. \(movie.director)")
+    case let stringConverter as (String) -> String: 
+      print(stringConverter("Michael"))
+    default: 
+      print("something else")
+  }
+}
 
