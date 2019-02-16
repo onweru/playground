@@ -38,3 +38,16 @@ repeat {
 } while anotherCounter <  scoresCount
 
 print(teamScores)
+
+<article class="format-standard">
+			<div class="entry-date">
+				<div class="number"><?php echo mysql2date('j', $recent["post_date"]) ?></div>
+				<div class="month"><?php echo mysql2date('M', $recent["post_date"]) ?></div>
+				<div class="year"><?php echo mysql2date('Y', $recent["post_date"]) ?></div>
+				<em></em>
+			</div>
+			<div  class="post-heading">
+				<h5><a href="<?php echo get_permalink($recent["ID"]) ?>"><?php echo $recent["post_title"] ?> </a></h5>
+			</div>
+			<div class="excerpt"><?php echo $recent["post_excerpt"]?></div>
+		</article>

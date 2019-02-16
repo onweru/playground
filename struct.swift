@@ -97,3 +97,32 @@ struct Queue<Element> {
   }
 }
 
+
+<?php 
+/*
+* Displays all the posts entries
+*
+*/
+?>
+
+<?php get_header() ?>
+	
+	<?php  get_template_part('includes/masthead') ?>
+	
+	<!-- posts list -->
+	<div id="posts-list" class="clearfix">        	
+		<?php get_template_part('includes/loop' ) ?>
+		
+		<!-- page-navigation -->
+		<div class="page-navigation clearfix">
+			<div class="nav-next"><?php  next_posts_link('&#8592; Older Entries') ?></div>
+			<div class="nav-previous"><?php previous_posts_link('Newer Entries &#8594;') ?></div>
+		</div>
+		<!--ENDS page-navigation -->
+	
+	</div>
+	<!-- ENDS posts list -->
+	
+	<?php get_sidebar() ?>
+	
+<?php get_footer() ?>
