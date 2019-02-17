@@ -67,3 +67,28 @@ extension Int {
 3.repetitions {
   print("Hello")
 }
+
+extension Int {
+  mutating func square() {
+    self = self * self
+  }
+}
+
+var someInt = 3
+someInt.square()
+
+extension Int {
+  subscript(digitIndex: Int) -> Int {
+    var decimalBase = 1
+    for _ in 0..<digitIndex {
+      decimalBase *= 10
+    }
+    return (self/decimalBase) % 10
+  }
+}
+
+746381295[0]
+746381295[1]
+746381295[2]
+746381295[8]
+746381295[9]
