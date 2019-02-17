@@ -22,3 +22,6 @@ print("One inch us \(oneInch) meters")
 
 let threeFeet = 3.ft
 print("Three feet is \(threeFeet) meters")
+
+let aMarathon = 42.km + 195.m
+print("A marathon is \(aMarathon) meters long")
