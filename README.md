@@ -1,4 +1,4 @@
 
-### Learning Swift 4.2
+### Learning Swift
 
 Practice code snippets :)
