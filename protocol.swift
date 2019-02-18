@@ -194,3 +194,29 @@ extension SnakesAndLadders: TextRepresentable {
 }
 
 print(game.textualDescription)
+
+//  conditional protocol conformance
+
+extension Array: TextRepresentable where Element: TextRepresentable {
+  var textualDescription: String {
+    let itemsAsText = self.map { $0.textualDescription }
+    return "[" + itemsAsText.joined(separator: ",") + "]"
+  }
+}
+
+let myDice = [d6, d12]
+print(myDice.textualDescription)
+
+// 
+struct Hamster {
+  var name: String
+  var textualDescription: String {
+    return "A hamster named \(name)"
+  }
+}
+
+extension Hamster: TextRepresentable {}
+
+let simonTheHamster = Hamster(name: "Simon")
+let somethingTextRepresentable: TextRepresentable = simonTheHamster
+print(somethingTextRepresentable.textualDescription)
