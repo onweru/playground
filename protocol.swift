@@ -171,3 +171,26 @@ let tracker = DiceGameTracker()
 let game = SnakesAndLadders()
 game.delegate = tracker
 game.play()
+
+// protocols & extensions
+
+protocol TextRepresentable {
+  var textualDescription: String { get }
+}
+
+extension Dice: TextRepresentable {
+  var textualDescription: String {
+    return "A \(sides)-sided dice"
+  }
+}
+
+let d12 = Dice(sides: 12, generator: LinearCongruentialGenerator())
+print(d12.textualDescription)
+
+extension SnakesAndLadders: TextRepresentable {
+  var textualDescription: String {
+    return "A game of Snakes and Ladders with \(finalSquare) squares"
+  }
+}
+
+print(game.textualDescription)
