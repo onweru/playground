@@ -220,3 +220,11 @@ extension Hamster: TextRepresentable {}
 let simonTheHamster = Hamster(name: "Simon")
 let somethingTextRepresentable: TextRepresentable = simonTheHamster
 print(somethingTextRepresentable.textualDescription)
+
+// collection of protocol types
+
+let things: [TextRepresentable] = [game, d12, simonTheHamster]
+
+for thing in things {
+  print(thing.textualDescription)
+}
