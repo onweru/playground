@@ -266,7 +266,7 @@ print("And here's a random Boolean: \(newGenerator.randomBool())")
 
 // adding constraints to protocol extensions
 
-extension collection where Element: Equatable {
+extension Collection where Element: Equatable {
   func allEqual() -> Bool {
     for element in self {
       if element != self.first {
