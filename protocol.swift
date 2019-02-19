@@ -251,3 +251,15 @@ extension SnakesAndLadders: PrettyTextRepresentable {
 }
 
 print(game.prettyTextualDescription)
+
+// protocols' extensions
+
+extension RandomNumberGenerator {
+  func random() -> Bool {
+    return randomBool() 0.5
+  }
+}
+
+let generator = LinearCongruentialGenerator()
+print("Here's a random number: \(generator.random())")
+print("And here's a random Boolean: \(generator.randomBool())")
