@@ -255,11 +255,30 @@ print(game.prettyTextualDescription)
 // protocols' extensions
 
 extension RandomNumberGenerator {
-  func random() -> Bool {
-    return randomBool() 0.5
+  func randomBool() -> Bool {
+    return random() > 0.5
   }
 }
 
-let generator = LinearCongruentialGenerator()
-print("Here's a random number: \(generator.random())")
-print("And here's a random Boolean: \(generator.randomBool())")
+let newGenerator = LinearCongruentialGenerator()
+print("Here's a random number: \(newGenerator.random())")
+print("And here's a random Boolean: \(newGenerator.randomBool())")
+
+// adding constraints to protocol extensions
+
+extension collection where Element: Equatable {
+  func allEqual() -> Bool {
+    for element in self {
+      if element != self.first {
+        return false
+      }
+    }
+    return true
+  }
+}
+
+let equalNumbers = [100, 100, 100, 100, 100, 100]
+let differentNumbers = [100, 100, 100, 200, 100, 200]
+
+print(equalNumbers.allEqual())
+print(differentNumbers.allEqual())
