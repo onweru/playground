@@ -32,3 +32,26 @@ var someString = "Hola"
 var anotherString = "Amigo"
 swapTwoValues(&someString, &anotherString)
 print("SomeString is now \(someString), and anotherString is now \(anotherString)")
+
+struct Stack<Element> {
+  var items = [Element]()
+  
+  mutating func push(_ item: Element) {
+    items.append(item)
+  }
+
+  mutating func pop() -> Element {
+    return items.removeLast()
+  }
+}
+
+var stackOfStrings = Stack<String>()
+stackOfStrings.push("Uno")
+stackOfStrings.push("Dos")
+stackOfStrings.push("Tres")
+stackOfStrings.push("Cuatro")
+stackOfStrings.push("Nuevo")
+print(stackOfStrings)
+let fromTheTop = stackOfStrings.pop()
+print(fromTheTop)
+print(stackOfStrings)
