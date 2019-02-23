@@ -55,3 +55,15 @@ print(stackOfStrings)
 let fromTheTop = stackOfStrings.pop()
 print(fromTheTop)
 print(stackOfStrings)
+
+// extend generic type
+
+extension Stack {
+  var topItem: Element? {
+    return items.isEmpty ? nil : items[items.count - 1]
+  }
+}
+
+if let topItem = stackOfStrings.topItem {
+  print("The top item on the stacj is \(topItem).")
+}
