@@ -39,21 +39,21 @@ struct Stack<Element> {
   mutating func push(_ item: Element) {
     items.append(item)
   }
-
+  
   mutating func pop() -> Element {
     return items.removeLast()
   }
-
+  
   // conformance to the Container protocol
-
+  
   mutating func append(_ item: Element) {
     self.push(item)
   }
-
+  
   var count: Int {
     return items.count
   }
-
+  
   subscript(i: Int) -> Element {
     return items[i]
   }
@@ -114,23 +114,56 @@ struct InStack: Container {
   mutating func push(_ item: Int) {
     items.append(item)
   }
-
+  
   mutating func pop() -> Int {
     return items.removeLast()
   }
-
-  typealias Item = Int 
-
+  
+  typealias Item = Int
+  
   mutating func append(_ item: Int) {
     self.push(item)
   }
-
+  
   var count: Int {
     return items.count
   }
-
+  
   subscript(i: Int) -> Int {
     return items[i]
   }
 }
+
+protocol SuffixableContainer: Container {
+  associatedtype Suffix: SuffixableContainer where Suffix.Item == Item
+  func suffix(_ size: Int) -> Suffix
+}
+
+extension Stack: SuffixableContainer {
+  func suffix(_ size: Int) -> Stack {
+    var result = Stack()
+    for index in (count-size)..<count{
+      result.append(self[index])
+    }
+    return result
+  }
+}
+
+var stackOfInts = Stack<Int>()
+stackOfInts.append(10)
+stackOfInts.append(20)
+stackOfInts.append(30)
+let suffix = stackOfInts.suffix(2)
+
+extension InStack: SuffixableContainer {
+  func suffix(_ size: Int) -> Stack<Int> {
+    var result = Stack<Int>()
+    for index in (count-size)..<count {
+      result.append(self[index])
+    }
+    return result
+  }
+}
+
+// generic where clauses
 
